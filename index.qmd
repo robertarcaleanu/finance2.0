@@ -1,0 +1,77 @@
+---
+title: "Finance & Time Series"
+author: "Robert Arcaleanu"
+format: html
+server: shiny
+toc: true
+execute: 
+  echo: false
+
+---
+
+# Introduction
+
+This project is intended to demonstrate my knowledge on the following topics, but do not make decisions based on the results presented in the following sections:
+
+- Stock Market - still working on it ;)
+- Timeseries
+- Data Analytics
+
+
+```{r, include=FALSE}
+packages <- list("data.table","ggplot2", "quantmod", "forecast","prophet",
+                 "tidymodels", "lubridate", "tidyquant", "shiny", "plotly")
+lapply(packages, require, character.only = T)
+library(ggplot2)
+```
+
+# Quantitative Fianance
+
+
+
+Select the stock and the timeframe you want to analyse:
+```{r}
+inputPanel(
+  shiny::textInput("stock", "Select Stock", "PG")
+)
+
+fluidPage(
+  dateRangeInput("dates", label = "Date range",  start = Sys.time() - 24*365*3600)
+)
+
+```
+
+```{r}
+plotlyOutput("distPlot")
+```
+
+
+
+```{r}
+#| context: server
+
+library(data.table)
+library(tidyquant)
+library(ggplot2)
+library(plotly)
+output$value <- renderText({ input$stock })
+
+selectedData <- reactive({
+  
+    dt_stock <- data.table(tq_get(input$stock, get = "stock.prices", from = input$dates[1], 
+                                  to = input$dates[2]))
+  })
+
+output$distPlot <- renderPlotly({
+  
+  g <- ggplot(data = selectedData(), aes(x = date, y = close)) +
+    geom_line() + theme_tq()
+  ggplotly(g)
+
+})
+```
+
+## Calculating and Comparing rates of return
+
+
+## Measuring investment risk
