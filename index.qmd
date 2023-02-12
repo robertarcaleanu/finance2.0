@@ -1,7 +1,9 @@
 ---
 title: "Finance & Time Series"
 author: "Robert Arcaleanu"
-format: html
+format:
+  html: 
+    theme: united
 server: shiny
 toc: true
 execute: 
@@ -29,7 +31,7 @@ library(ggplot2)
 
 
 
-Select the stock and the timeframe you want to analyse:
+Select the stock and the time frame you want to analyse:
 ```{r}
 inputPanel(
   shiny::textInput("stock", "Select Stock", "PG")
@@ -45,6 +47,30 @@ fluidPage(
 plotlyOutput("distPlot")
 ```
 
+
+
+
+
+## Calculating and Comparing rates of return
+
+
+## Measuring investment risk
+
+
+# Time Series
+
+In this section we try to forecast the stock value. The analysis below is only taking into account some of the most well-known techniques for time series. However, financial aspects are not considered.
+
+
+
+## ARIMA
+
+## Prophet
+
+
+## Neural Networks 
+
+## Ensemble
 
 
 ```{r}
@@ -71,7 +97,3 @@ output$distPlot <- renderPlotly({
 })
 ```
 
-## Calculating and Comparing rates of return
-
-
-## Measuring investment risk

@@ -1,0 +1,15 @@
+name: financeReport
+title: financeReport
+username:
+account: robertarc
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 8038025
+bundleId: 6734243
+url: https://robertarc.shinyapps.io/financeReport/
+when: 1673733882.05367
+lastSyncTime: 1673733882.05367
+quarto_version: 1.0.36
+quarto_engines: knitr
+asMultiple: FALSE
+asStatic: FALSE

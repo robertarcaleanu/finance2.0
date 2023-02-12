@@ -47,6 +47,13 @@ ul.task-list{list-style: none;}
   <li><a href="#calculating-and-comparing-rates-of-return" id="toc-calculating-and-comparing-rates-of-return" class="nav-link" data-scroll-target="#calculating-and-comparing-rates-of-return">Calculating and Comparing rates of return</a></li>
   <li><a href="#measuring-investment-risk" id="toc-measuring-investment-risk" class="nav-link" data-scroll-target="#measuring-investment-risk">Measuring investment risk</a></li>
   </ul></li>
+  <li><a href="#time-series" id="toc-time-series" class="nav-link" data-scroll-target="#time-series">Time Series</a>
+  <ul class="collapse">
+  <li><a href="#arima" id="toc-arima" class="nav-link" data-scroll-target="#arima">ARIMA</a></li>
+  <li><a href="#prophet" id="toc-prophet" class="nav-link" data-scroll-target="#prophet">Prophet</a></li>
+  <li><a href="#neural-networks" id="toc-neural-networks" class="nav-link" data-scroll-target="#neural-networks">Neural Networks</a></li>
+  <li><a href="#ensemble" id="toc-ensemble" class="nav-link" data-scroll-target="#ensemble">Ensemble</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -85,7 +92,7 @@ ul.task-list{list-style: none;}
 </section>
 <section id="quantitative-fianance" class="level1">
 <h1>Quantitative Fianance</h1>
-<p>Select the stock and the timeframe you want to analyse:</p>
+<p>Select the stock and the time frame you want to analyse:</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="shiny-input-panel">
@@ -104,7 +111,7 @@ ul.task-list{list-style: none;}
 <div id="dates" class="shiny-date-range-input form-group shiny-input-container">
 <label class="control-label" id="dates-label" for="dates">Date range</label>
 <div class="input-daterange input-group input-group-sm">
-<input class="form-control" type="text" aria-labelledby="dates-label" title="Date format: yyyy-mm-dd" data-date-language="en" data-date-week-start="0" data-date-format="yyyy-mm-dd" data-date-start-view="month" data-initial-date="2022-01-14" data-date-autoclose="true">
+<input class="form-control" type="text" aria-labelledby="dates-label" title="Date format: yyyy-mm-dd" data-date-language="en" data-date-week-start="0" data-date-format="yyyy-mm-dd" data-date-start-view="month" data-initial-date="2022-02-12" data-date-autoclose="true">
 <span class="input-group-addon input-group-prepend input-group-append">
 <span class="input-group-text"> to </span>
 </span>
@@ -119,14 +126,30 @@ ul.task-list{list-style: none;}
 <p></p><div id="distPlot" style="width:100%; height:400px; " class="plotly html-widget html-widget-output shiny-report-size shiny-report-theme"></div><p></p>
 </div>
 </div>
-<div class="cell" data-context="server">
-
-</div>
 <section id="calculating-and-comparing-rates-of-return" class="level2">
 <h2 class="anchored" data-anchor-id="calculating-and-comparing-rates-of-return">Calculating and Comparing rates of return</h2>
 </section>
 <section id="measuring-investment-risk" class="level2">
 <h2 class="anchored" data-anchor-id="measuring-investment-risk">Measuring investment risk</h2>
+</section>
+</section>
+<section id="time-series" class="level1">
+<h1>Time Series</h1>
+<p>In this section we try to forecast the stock value. The analysis below is only taking into account some of the most well-known techniques for time series. However, financial aspects are not considered.</p>
+<section id="arima" class="level2">
+<h2 class="anchored" data-anchor-id="arima">ARIMA</h2>
+</section>
+<section id="prophet" class="level2">
+<h2 class="anchored" data-anchor-id="prophet">Prophet</h2>
+</section>
+<section id="neural-networks" class="level2">
+<h2 class="anchored" data-anchor-id="neural-networks">Neural Networks</h2>
+</section>
+<section id="ensemble" class="level2">
+<h2 class="anchored" data-anchor-id="ensemble">Ensemble</h2>
+<div class="cell" data-context="server">
+
+</div>
 <p>
 <script type="application/shiny-prerendered" data-context="server">
 library(data.table)
